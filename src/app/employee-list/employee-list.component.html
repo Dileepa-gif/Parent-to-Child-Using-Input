@@ -1,0 +1,43 @@
+<!-- <table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> First Name</th>
+            <th> Last Name </th>
+            <th> Email Id</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of employees" >
+            <td> {{ employee.firstName }} </td>
+            <td> {{ employee.lastName }} </td>
+            <td> {{ employee.emailId }} </td>
+            <td>
+                <button (click) = "employeeDetails(employee.id)" class = "btn btn-success" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+
+<!--Main Navigation-->
+<header>
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky">
+
+      <button class = "btn btn-success" (click) = "loadEmployeeList()">Load Employee List</button>
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <div *ngFor = "let employee of employees">
+          <a (click) = "employeeDetails(employee)" class="list-group-item list-group-item-action py-2 ripple"><span>{{ employee.firstName }}</span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+</header>
+<!--Main Navigation-->
+
+<main style="margin-top: 58px;">
+  <div class="container pt-4"><app-employee-details [employee]="employee"></app-employee-details></div>
+</main>
